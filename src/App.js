@@ -1,48 +1,39 @@
 import './App.css';
 import React from 'react';
 import tw from "tailwind-styled-components"
-import BucketList from './BucketList';
-import Header from './Header';
-import { Route, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
+import Start from './components/start/Start'
+import Main from './components/main/Main'
+import Making from './components/making/Making'
+import NotFound from './components/nabis/NotFound';
+import Nabi from './components/nabis/Nabi'
 
 const Container = tw.div`
-    flex
-    items-center
-    justify-center
-    flex-col
-    w-64
-    h-64
-    m-auto
-    bg-indigo-600
-    hover:bg-red-400
+  w-full h-screen bg-yellow-400
 `
 
-const Container2 = tw.div`
-    w-full m-auto bg-purple-500
-    cursor-pointer
-    rounded-xl
-    animate-bounce
-`
+// const Container2 = tw.div`
+//     w-full m-auto bg-purple-500
+//     cursor-pointer
+//     rounded-xl
+//     animate-bounce
+// `
 
 function App() {
   
   return (
-    <div className="App">
-      <div>
-        <Link to="/">홈으로 가기</Link>
-        <Link to="/header/:head_name">헤더로 가기</Link>
-      </div>
-    <Container>
-          <h1 className="text-3xl font-bold underline text-red-600">
-      Hello world!
-    </h1>
-    
-    </Container>
-    <Container2>
-    <Route path="/" exact component={BucketList} />
-    <Route path="/header/:head_name" component={Header} />
-    </Container2>
+    <div className="App" style={{}}>
+      <Container>
+      <Nabi />
+        <Switch>
+          <Route path="/" exact component={Start} />
+          <Route path="/main" component={Main} />
+          <Route path="/making" component={Making} />
+          <Route component={NotFound} />
+        </Switch>
+      </Container>
+
     </div>
   );
 }
