@@ -1,0 +1,9 @@
+{
+  "name": "atelier-market-assets",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "list:daily": "node scripts/list-daily-asset-urls.mjs"
+  }
+}
