@@ -1,4 +1,13 @@
-# 리액트 레벨 1 나만의사전 만들기!
+# atelier-market-assets
 
-## 설치패키지
-#### yarn, redux, react-router-dom, tailwind, tailwind-styled-components, autoprefixer, postcss
+Public image assets for Atelier Market product data.
+
+## URL pattern
+
+Use jsDelivr URLs in Firestore:
+
+```text
+https://cdn.jsdelivr.net/gh/matty255/atelier-market-assets@main/product-visuals/daily/YYYY-MM-DD/full/filename.jpg
+```
+
+Raw GitHub URLs are also available, but jsDelivr is preferred for browser delivery.
