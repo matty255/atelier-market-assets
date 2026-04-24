@@ -6,6 +6,10 @@ This repository stores generated product visuals for
 `mono-portfolio/apps/atelier-market`. Firestore product documents should point
 to public CDN URLs from this repository, not local development paths.
 
+This repository is intentionally not a Firebase project. It does not own
+emulator scripts, Firestore writes, product entity generation, or
+`mono-portfolio` branch and issue rules. See [AUTOMATION.md](./AUTOMATION.md).
+
 ## CDN URL
 
 ```text
@@ -32,14 +36,8 @@ npm run list:daily -- 2026-04-24 --format=markdown
 
 You can also set `ATELIER_ASSET_DATE=YYYY-MM-DD`.
 
-## Local Firebase Auth
+## Firebase Boundary
 
-Local Firebase credentials are intentionally ignored:
-
-```text
-.env.local
-.secrets/
-```
-
-Copy them from `mono-portfolio/apps/atelier-market` when a local automation
-needs to write Atelier Market Firestore documents. Do not commit those files.
+Do not copy Firebase credentials here for automation. Keep service accounts,
+emulator MJS files, Firestore preflight, and Firestore uploads in
+`C:\WorkSpace\mono-portfolio`.
